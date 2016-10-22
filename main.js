@@ -37,12 +37,13 @@ $(document).ready(function() {
 		$('.new').toggleClass('animated-fade');
 		$('.search').toggleClass('move');
 		$('.search-bar').toggleClass('shown');
+		$('.search-bar').focus();
 	})
 
 })
 
 $(window).on('load', function() {
-	$('.load-bar').fadeOut(300);
+	$('.load-bar').fadeOut(100);
 	$('.login-actions').removeClass('animated-left');
 	$('header').removeClass('animated-fade');
 	$('.tabs-wrap').removeClass('animated-fade');
@@ -51,6 +52,8 @@ $(window).on('load', function() {
 	$('.fa-bars').removeClass('animated-right');
 	$('.logo').removeClass('animated-right');
 	$('.header-bg').removeClass('animated-fade');
-	$('.header-bg').removeClass('animated-scale');
-	$('head').css('overflow-y', 'auto');
+	$('header').removeClass('animated-scale');
+	$('.header-bg').removeClass('animated-scale').delay(500).queue(function(){
+		$('html').css('overflow-y', 'visible').dequeue();
+	});
 })
