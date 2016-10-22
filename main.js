@@ -13,4 +13,44 @@ $(document).ready(function() {
 		$('.fa-times').toggleClass('change');
 	})
 
+	$(document).on('click', '.featured', function() {
+		$('.new').removeClass('selected');
+		$('.popular').removeClass('selected');
+		$(this).addClass('selected');
+	})
+
+	$(document).on('click', '.popular', function() {
+		$('.new').removeClass('selected');
+		$('.featured').removeClass('selected');
+		$(this).addClass('selected');
+	})
+
+	$(document).on('click', '.new', function() {
+		$('.featured').removeClass('selected');
+		$('.popular').removeClass('selected');
+		$(this).addClass('selected');
+	})
+
+	$(document).on('click', '.search', function() {
+		$('.featured').toggleClass('animated-fade');
+		$('.popular').toggleClass('animated-fade');
+		$('.new').toggleClass('animated-fade');
+		$('.search').toggleClass('move');
+		$('.search-bar').toggleClass('shown');
+	})
+
+})
+
+$(window).on('load', function() {
+	$('.load-bar').fadeOut(300);
+	$('.login-actions').removeClass('animated-left');
+	$('header').removeClass('animated-fade');
+	$('.tabs-wrap').removeClass('animated-fade');
+	$('.tabs-wrap').removeClass('animated-top');
+	$('.categories').removeClass('animated-right');
+	$('.fa-bars').removeClass('animated-right');
+	$('.logo').removeClass('animated-right');
+	$('.header-bg').removeClass('animated-fade');
+	$('.header-bg').removeClass('animated-scale');
+	$('head').css('overflow-y', 'auto');
 })
