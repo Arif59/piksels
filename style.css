@@ -45,6 +45,7 @@ a, a:link, a:visited, a:hover, a:focus, a:active {
 
 body {
 	font-family: Open Sans, sans-serif;
+	background: #f2fbfb
 }
 
 header {
@@ -53,11 +54,16 @@ header {
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	opacity: 1;
-	transition: transform 0.5s ease;
+	transition: all 0.5s ease;
 }
 
 .header-bg {
@@ -88,11 +94,15 @@ header {
 }
 
 .animated-left {
-	transform: translateX(20em);
+	-webkit-transform: translateX(20em);
+	    -ms-transform: translateX(20em);
+	        transform: translateX(20em);
 }
 
 .animated-right {
-	transform: translateX(-20em);
+	-webkit-transform: translateX(-25em);
+	    -ms-transform: translateX(-25em);
+	        transform: translateX(-25em);
 }
 
 .animated-fade {
@@ -100,11 +110,14 @@ header {
 }
 
 .animated-top {
-	transform: translateY(19.5em);
+	-webkit-transform: translateY(1%);
+	    -ms-transform: translateY(1%);
+	        transform: translateY(1%);
 }
 
 .animated-scale {
-	transform: scale(1, 4);
+	/*transform: scale(1, 4);*/
+	height: 100vh;
 }
 
 .login-actions li:first-child {
@@ -130,10 +143,15 @@ header {
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	-ms-align-items: center;
-	align-items: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	font-size: 0.7em;
 }
 
@@ -144,8 +162,11 @@ header {
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
+	display: -ms-flexbox;
 	display: flex;
+	transition: opacity 0.3s, -webkit-transform 0.5s ease;
 	transition: opacity 0.3s, transform 0.5s ease;
+	transition: opacity 0.3s, transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
 .tabs li {
@@ -197,7 +218,9 @@ header {
 
 .search.move {
 	transition: all 0.5s ease;
-	transform: translateX(5vw);
+	-webkit-transform: translateX(5vw);
+	    -ms-transform: translateX(5vw);
+	        transform: translateX(5vw);
 }
 
 .selected {
@@ -207,11 +230,14 @@ header {
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	width: 6.2em;
 	font-size: 1.28em;
-	margin-bottom: 0.42em !important;
+	margin-bottom: 0.85em !important;
 	transition: all 0.5s ease;
 	z-index: 3;
 }
@@ -223,7 +249,7 @@ header {
 .categories {
 	height: 30em;
 	font-size: 0.8em;
-	width: 30%;
+	width: 20em;
 	position: absolute;
 	top: 20em;
 	right: 1em;
@@ -272,7 +298,9 @@ header {
 
 
 .drawer.visible {
-	transform: translateX(-75vw);
+	-webkit-transform: translateX(-75vw);
+	    -ms-transform: translateX(-75vw);
+	        transform: translateX(-75vw);
 }
 
 .drawer ul li, .categories ul li {
@@ -309,25 +337,16 @@ header {
 }
 
 .banner {
-	width: 100%;
+	width: 115%;
 	background: rgba(255,255,255,0.85);
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	height: 3.8em;
+	height: 7.65em;
 	position: absolute;
 	z-index: -1;
-	top: 2em;
+	top: -0.1em;
 	left: -0.5em;
-}
-
-.arrow-right {
-  width: 0; 
-  height: 0; 
-  border-top: 2em solid transparent;
-  border-bottom: 2em solid transparent;
-  border-left: 1.7em solid rgba(255,255,255,0.85);
-  top: 1.9em;
-  position: absolute;
-  right: -1.1em;
+	clip-path: polygon(0 28%, 85% 28%, 95% 50%, 85% 71%, 0 71%);
+	-webkit-clip-path: polygon(0 28%, 85% 28%, 95% 50%, 85% 71%, 0 71%);
 }
 
 
@@ -338,7 +357,9 @@ header {
 	cursor: pointer;
 	z-index: 20;
 	opacity: 1;
+	transition: opacity 0.3s ease, -webkit-transform 0.5s ease;
 	transition: opacity 0.3s ease, transform 0.5s ease;
+	transition: opacity 0.3s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
 	padding: 1.5em;
 }
 
@@ -381,7 +402,9 @@ header {
 
 @media screen and (min-width: 27.5em) {
 	.search.move {
-		transform: translateX(9vw);
+		-webkit-transform: translateX(9vw);
+		    -ms-transform: translateX(9vw);
+		        transform: translateX(9vw);
 	}
 }
 
@@ -390,7 +413,9 @@ header {
 	body {font-size: 105%}
 	.tabs {
 		width: 90%;
-		justify-content: flex-start;
+		-webkit-justify-content: flex-start;
+		    -ms-flex-pack: start;
+		        justify-content: flex-start;
 		margin: 0 auto;
 	}
 	.search {
@@ -415,14 +440,18 @@ header {
 	}
 
 	.search.move {
-		transform: translateX(2em);
+		-webkit-transform: translateX(2em);
+		    -ms-transform: translateX(2em);
+		        transform: translateX(2em);
 	}
 
 	.featured.animated-fade, .popular.animated-fade, .new.animated-fade {
 		opacity: 1;
 	}
 	.categories.animated-right {
-		transform: translateX(20em);
+		-webkit-transform: translateX(25em);
+		    -ms-transform: translateX(25em);
+		        transform: translateX(25em);
 	}
 }
 
@@ -444,7 +473,9 @@ header {
 	}
 
 	.categories.animated-right {
-		transform: translateX(-20em);
+		-webkit-transform: translateX(-25em);
+		    -ms-transform: translateX(-25em);
+		        transform: translateX(-25em);
 	}
 
 	.search-bar {
@@ -452,7 +483,9 @@ header {
 	}
 	
 	.search.move {
-		transform: none;
+		-webkit-transform: none;
+		    -ms-transform: none;
+		        transform: none;
 	}
 }
 
@@ -489,8 +522,8 @@ header {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 6px;
-  background-color: #fdba2c;
+  height: 0.2em;
+  background-color: #42a0b5;
 }
 .bar {
   content: "";
@@ -502,16 +535,24 @@ header {
   text-align: center;
 }
 .bar:nth-child(1) {
-  background-color: #da4733;
-  animation: loading 3s linear infinite;
+  background-color: #98d4d4;
+  -webkit-animation: loading 3s linear infinite;
+          animation: loading 3s linear infinite;
 }
 .bar:nth-child(2) {
-  background-color: #3b78e7;
-  animation: loading 3s linear 1s infinite;
+  background-color: #2ab8bf;
+  -webkit-animation: loading 3s linear 1s infinite;
+          animation: loading 3s linear 1s infinite;
 }
 .bar:nth-child(3) {
-  background-color: #fdba2c;
-  animation: loading 3s linear 2s infinite;
+  background-color: #42a0b5;
+  -webkit-animation: loading 3s linear 2s infinite;
+          animation: loading 3s linear 2s infinite;
+}
+@-webkit-keyframes loading {
+    from {left: 50%; width: 0;z-index:100;}
+    33.3333% {left: 0; width: 100%;z-index: 10;}
+    to {left: 0; width: 100%;}
 }
 @keyframes loading {
     from {left: 50%; width: 0;z-index:100;}
